@@ -105,7 +105,7 @@ public class VanillaCommands
 		if(context.contains("dst"))
 		{
 			EntityPlayerMP dst = context.get("dst").asPlayer();
-			Teleporter.tpNow(target, dst);
+			Teleporter.tpLater(target, dst);
 			context.sendMessage("command.tp.success.player", target.func_145748_c_(), dst.func_145748_c_());
 		}
 		else if(context.contains("x") && context.contains("y") && context.contains("z"))
@@ -114,7 +114,7 @@ public class VanillaCommands
 			double x = context.get("x").asCoordinate(target.posX);
 			double y = context.get("y").asCoordinate(target.posY);
 			double z = context.get("z").asCoordinate(target.posZ);
-			Teleporter.tpNow(target, world.provider.dimensionId, x, y, z);
+			Teleporter.tpLater(target, world.provider.dimensionId, x, y, z);
 			context.sendMessage("command.tp.success.coordinate",
 					target.func_145748_c_(), world.getWorldInfo().getWorldName(), x, y, z);
 		}
